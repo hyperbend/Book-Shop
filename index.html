@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body onload="onInit()">
+    <h1>Book Shop</h1>
+
+    <label>
+        Search:
+        <input type="text" oninput="onSetFilterTxt(this.value)">
+    </label>
+
+    <label>
+        Minimum Rating:
+        <select onchange="onSetMinRating(this.value)">
+            <option value="0">All</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5</option>
+        </select>
+    </label>
+
+
+    <button onclick="onResetFilter()">Reset</button>
+    <button onclick="onAddBook()">Add Book</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="books-table"></tbody>
+    </table>
+
+    <div class="user-msg hide"></div>
+
+    <script src="js/storage.service.js"></script>
+    <script src="js/util.service.js"></script>
+    <script src="js/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+
+</body>
+
+</html>
